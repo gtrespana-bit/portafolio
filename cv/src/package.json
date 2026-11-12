@@ -1,0 +1,14 @@
+{
+  "name": "cv-ruben-romero",
+  "private": true,
+  "type": "module",
+  "description": "Generador del CV (HTML + CSS -> PDF con Chromium sin interfaz)",
+  "scripts": {
+    "build": "node build.mjs",
+    "emoji": "node raster-emoji.mjs assets/emoji-svg assets/emoji-png 160"
+  },
+  "dependencies": {
+    "@sparticuz/chromium": "153.0.0",
+    "puppeteer-core": "25.17.0"
+  }
+}
