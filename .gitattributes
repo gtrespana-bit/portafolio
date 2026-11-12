@@ -2,3 +2,5 @@
 # como texto y el archivo se corrompe al viajar dentro de un .patch.
 *.pdf binary
 *.ttf binary
+*.png binary
+*.jpg binary

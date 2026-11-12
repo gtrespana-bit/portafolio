@@ -1,0 +1,338 @@
+/* CV de Rubén Romero — diseño reconstruido a partir del PDF original (junio de 2026).
+   Las medidas salen de medir aquel PDF: 1 px CSS = 0,75 pt. A4 = 793,7 x 1122,5 px.
+   Las alturas de línea van en px porque la fuente (Selawik) no tiene exactamente las mismas
+   métricas verticales que Segoe UI, la del original. */
+
+@page { size: 210mm 297mm; margin: 0; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  font-family: 'CV Sans', 'Segoe UI', 'Selawik', sans-serif;
+  font-size: 10px;
+  color: #2d3748;
+  background: #fff;
+}
+
+a { color: inherit; text-decoration: none; }
+.nw { white-space: nowrap; }
+
+/* Los iconos, las viñetas y los puntos de la línea de tiempo usan position:absolute SIN left/top
+   (posición estática + márgenes). Así ningún contenedor queda «posicionado» y el texto del PDF
+   sale en orden de lectura, que es lo que leen los filtros automáticos de CV (ATS). */
+
+/* ---------- página ---------- */
+
+.page {
+  width: 210mm;
+  height: 297mm;
+  display: flex;
+  overflow: hidden;
+  break-after: page;
+}
+.page:last-child { break-after: auto; }
+
+/* ---------- barra lateral ---------- */
+
+.side {
+  flex: none;
+  width: 70mm;
+  padding: 10mm 7mm;
+  color: #fff;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.s-head {
+  padding-bottom: 18.55px;
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+  text-align: center;
+}
+
+.photo {
+  width: 30mm;
+  height: 30mm;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, .3);
+  background: linear-gradient(135deg, #e94560, #0f3460);
+  overflow: hidden;
+}
+.photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.s-name {
+  margin-top: 11.5px;
+  font-size: 15.333px;
+  font-weight: 700;
+  line-height: 18.4px;
+}
+
+.s-titles {
+  margin-top: 6.77px;
+  font-size: 10px;
+  line-height: 13.3px;
+  color: rgba(255, 255, 255, .85);
+}
+
+.s-h {
+  margin-top: 19px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 12px;
+  color: #e94560;
+  text-transform: uppercase;
+}
+.s-h.s-skills { margin-top: 13.1px; }
+.s-h.s-langs { margin-top: 15px; }
+
+/* contacto */
+.contact { margin-top: 7.1px; }
+.c-item {
+  padding-left: 20.66px;
+  margin-bottom: 1.6px;
+  font-size: 10px;
+  line-height: 18px;
+}
+.c-item:last-child { margin-bottom: 0; }
+.c-item .emo {
+  position: absolute;
+  width: 12.2px;
+  height: 12.2px;
+  margin-left: -19.26px;
+  margin-top: 3.4px;
+}
+
+/* habilidades */
+.sk-group { margin-top: 9.84375px; }
+.sk-group:first-child { margin-top: 10.2px; }
+.sk-label {
+  font-size: 8.667px;
+  font-weight: 600;
+  line-height: 11px;
+  color: rgba(255, 255, 255, .7);
+  text-transform: uppercase;
+}
+.sk-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.9375px 3.78px;
+  margin-top: 4.59375px;
+  margin-right: -4px; /* margen para que una fila justa no salte de línea */
+}
+.sk-tag {
+  padding: 3.40625px 7.56px;
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .12);
+  font-size: 8.667px;
+  line-height: 11px;
+  white-space: nowrap;
+}
+
+/* idiomas */
+.langs { margin-top: 9.25px; }
+.lang {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5.5px;
+  padding-right: .5px;
+  font-size: 10px;
+  line-height: 12px;
+}
+.dots { display: flex; gap: 3.5px; }
+.dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .25);
+}
+.dots i.on { background: #e94560; }
+
+/* ---------- columna principal ---------- */
+
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: 10mm 9mm;
+}
+
+.sec { margin-bottom: 4mm; }
+.sec:last-child { margin-bottom: 0; }
+
+h2 {
+  margin-bottom: 2.5mm;
+  padding-bottom: 4.67px;
+  border-bottom: 2px solid #e94560;
+  font-size: 13.333px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #1a1a2e;
+}
+
+.profile-t {
+  font-size: 10.667px;
+  line-height: 16px;
+  text-align: justify;
+}
+
+/* experiencia */
+.exp {
+  margin-bottom: 3.5mm;
+  padding-left: 3.5mm;
+  border-left: 2px solid #e2e8f0;
+}
+.exp:last-child { margin-bottom: 0; }
+.exp::before {
+  content: '';
+  position: absolute;
+  width: 3mm;
+  height: 3mm;
+  margin-left: -6mm;
+  box-sizing: content-box;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: #e94560;
+}
+.exp-role {
+  font-size: 11.333px;
+  font-weight: 700;
+  line-height: 13.6px;
+  color: #1a1a2e;
+}
+.exp-co {
+  margin-top: 2.25px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 12px;
+  color: #e94560;
+}
+.exp-date {
+  margin-top: 4.1px;
+  font-size: 8.667px;
+  line-height: 11px;
+  color: #718096;
+}
+.exp ul {
+  margin-top: 5.68px;
+  list-style: none;
+}
+.exp li {
+  margin-bottom: 3.7656px;
+  padding-left: 3.5mm;
+  font-size: 9.333px;
+  line-height: 13.0625px;
+}
+.exp li::before {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3.5px;
+  margin-left: -10.83px;
+  margin-top: 5.5px;
+  background: #e94560;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4.3px;
+}
+.exp .tags { margin-top: 4.685px; }
+.tag {
+  padding: 4px 7.56px 2px;
+  border: 1px solid #e2e8f0;
+  border-radius: 1mm;
+  background: #f7fafc;
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 11px;
+  color: #0f3460;
+  white-space: nowrap;
+}
+
+/* proyectos destacados */
+.proj {
+  margin-bottom: 2.5mm;
+  padding: 9.5px 2.5mm 9.58px;
+  border-left: 2px solid #e94560;
+  border-radius: 2mm;
+  background: #f7fafc;
+}
+.proj-t {
+  padding-left: 17.01px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 14px;
+  color: #1a1a2e;
+}
+.proj-t .emo {
+  position: absolute;
+  width: 10.9px;
+  height: 10.9px;
+  margin-left: -15.7px;
+  margin-top: 1.9px;
+}
+.proj-d {
+  margin-top: 4.77px;
+  font-size: 8.667px;
+  line-height: 12.125px;
+}
+.proj .tags { margin-top: 3.4px; }
+
+/* logros */
+.achs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2mm;
+}
+.ach {
+  padding: 27.55px 2mm 7.47px;
+  border-left: 1px solid #e94560;
+  border-radius: 2mm;
+  background: #f7fafc;
+}
+.ach .emo {
+  position: absolute;
+  width: 13.5px;
+  height: 13.5px;
+  margin-left: 1.5px;
+  margin-top: -18.15px;
+}
+.ach-t {
+  font-size: 9.333px;
+  font-weight: 700;
+  line-height: 12px;
+  color: #1a1a2e;
+}
+.ach-d {
+  margin-top: 2.1px;
+  font-size: 8px;
+  line-height: 10.39px;
+  color: #718096;
+}
+
+/* formación */
+.edu { margin-bottom: 8.93px; }
+.edu:last-child { margin-bottom: 0; }
+.edu-t {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 12px;
+  color: #1a1a2e;
+}
+.edu-d {
+  margin-top: 3.4px;
+  font-size: 8.667px;
+  font-weight: 600;
+  line-height: 11.267px;
+  color: #e94560;
+}
+.edu-d + .edu-d { margin-top: 0; }

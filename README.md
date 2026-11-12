@@ -1,10 +1,11 @@
 # portafolio
 
-Material para presentar los proyectos de `gtrespana-bit`: un dossier para montar el perfil de Fiverr y los textos de los proyectos para LinkedIn.
+Material para presentar los proyectos de `gtrespana-bit`: un dossier para montar el perfil de Fiverr, los textos de los proyectos para LinkedIn y el CV.
 
 - **`dossier-fiverr.pdf`**: el documento (68 páginas, en español; los textos para pegar en Fiverr van en inglés).
 - **`linkedin-proyectos.md`**: textos para la sección de proyectos de LinkedIn (CotizaT, CamperOcasión, MaquinariaOcasión, Venezuela Inmuebles y KHC Auto Import), en español y en inglés.
 - **`generador/`**: el código que lo produce, por si quieres cambiar un texto o un precio y volver a generarlo.
+- **`cv/`**: el CV actualizado con los proyectos nuevos (`CV - Ruben Romero - Hyb.pdf`), con el mismo diseño que el anterior, y su generador. Ver `cv/README.md`.
 
 ## Contenido del PDF
 
@@ -34,4 +35,4 @@ Las tipografías de `generador/fonts/` son IBM Plex (licencia SIL Open Font Lice
 ## Aviso
 
 Este repositorio es público y el dossier incluye precios, estrategia y una lista de cosas que conviene
-retirar de otros repositorios. Conviene hacerlo privado.
+retirar de otros repositorios. La carpeta `cv/` lleva además tu correo y tus teléfonos. Conviene hacerlo privado.
